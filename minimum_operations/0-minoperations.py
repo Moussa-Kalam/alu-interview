@@ -24,5 +24,3 @@ def minOperations(n):
 
     # Return the number of operations
     return operations
-
-print(minOperations(12))
