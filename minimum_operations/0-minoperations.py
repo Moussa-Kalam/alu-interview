@@ -18,4 +18,3 @@ def minOperations(n):
             operations += time
             n = n / time
     return operations
-    
