@@ -1,26 +1,25 @@
 #!/usr/bin/python3
+"""
+Minimum Operations
+"""
+
 
 def minOperations(n):
     """
-    Returns the minimum number of operations needed to result in n H characters in the text file
+        Calculates the fewest number of operation needed
+        to result exactly n H characters in the file
     """
-    # Edge case: if n is less than or equal to 0, return 0
-    if n <= 0:
+
+    if not n or n <= 1:
         return 0
-
-    # Variable to store the count of operations
+    
     operations = 0
-
-    # Keep dividing n by 2 until it is greater than or equal to 1
-    while n >= 1:
-        # Check if n is even or odd
-        if n % 2 == 0:
-            # If n is even, divide n by 2
-            n = n / 2
-        else:
-            # If n is odd, add 1 to it and divide by 2
-            n = (n + 1) / 2
-            operations += 1
-
-    # Return the number of operations
+    for time in range(2, n+1):
+        while(n % time == 0):
+            operations += time
+            n = n / time
     return operations
+
+
+# print(minOperations(12))
+# print(minOperations(4))
